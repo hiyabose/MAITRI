@@ -7,7 +7,7 @@ app = Flask(__name__, template_folder="template")
 
 reg = pickle.load(open("model.pkl", "rb"))
 
-reg = pickle.load(open("model1.pkl", "rb"))
+
 
 
 @app.route("/")
@@ -80,7 +80,7 @@ def home():
     print(pred)
     return render_template("index.html", data=pred)
 
-
+reg1 = pickle.load(open("model1.pkl", "rb"))
 
 @app.route("/test1")
 def hello2():
@@ -142,9 +142,9 @@ def hom():
                             ]
         ]
     )
-    pred = reg.predict(arr)
-    print(pred)
-    return render_template("index.html", data=pred)
+    pred1 = reg1.predict(arr)
+    print(pred1)
+    return render_template("index.html", data=pred1)
 
 
 
